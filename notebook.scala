@@ -21,12 +21,12 @@ import org.apache.spark.mllib.recommendation.ALS
     return (userId,movieId,rating,timeStamp)
   }
 
-val moviesFile = sc.textFile("/home/nill/Downloads/ml-1m/movies.dat")
+val moviesFile = sc.textFile("movies.dat")
     val moviesRDD = moviesFile.map(line => line.split("::"))
    //
 	 println("Number of movies",moviesRDD.count())
     //
-    val ratingsFile = sc.textFile("/home/nill/Downloads/ml-1m/ratings.dat")
+    val ratingsFile = sc.textFile("ratings.dat")
     val ratingsRDD = ratingsFile.map(line => parseRating1(line))
     
 	println("ratings count=",ratingsRDD.count())
